@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ProtocolBufferExperiments.Common;
+
+message TimeSpan {
+	int32 Days = 1;
+	int32 Hours = 2;
+	int32 Minutes = 3;
+	int32 Milliseconds = 4;
+}
