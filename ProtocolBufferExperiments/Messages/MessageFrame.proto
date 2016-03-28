@@ -1,0 +1,7 @@
+﻿syntax = "proto3";
+package ProtocolBufferExperiments.Common;
+
+message MessageFrame {
+	string messageTypeName = 1;
+	bytes encodedMessage = 2;
+}

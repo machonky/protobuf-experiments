@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+package ProtocolBufferExperiments.Common;
+
+message TimezoneTimestamp {
+	google.protobuf.Timestamp Timestamp = 1;
+	google.protobuf.Duration TimezoneOffset = 2;
+}

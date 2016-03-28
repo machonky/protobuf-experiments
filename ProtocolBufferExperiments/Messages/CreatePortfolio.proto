@@ -1,10 +1,9 @@
 syntax = "proto3";
-import "DateTimeOffset.proto";
+import "TimezoneTimestamp.proto";
 package ProtocolBufferExperiments.Commands;
 
 message CreatePortfolio {
-	string objectUuid = 1;
-	ProtocolBufferExperiments.Common.DateTimeOffset createTime = 2;
-	string moniker = 3;
-	string name = 4;
+	ProtocolBufferExperiments.Common.TimezoneTimestamp receivedAt = 1;
+	string client = 2;
+	string portfolioName = 3;
 }

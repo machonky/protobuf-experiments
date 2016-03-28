@@ -24,15 +24,14 @@ namespace ProtocolBufferExperiments.Commands {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVDcmVhdGVQb3J0Zm9saW8ucHJvdG8SIlByb3RvY29sQnVmZmVyRXhwZXJp",
-            "bWVudHMuQ29tbWFuZHMaFERhdGVUaW1lT2Zmc2V0LnByb3RvIooBCg9DcmVh",
-            "dGVQb3J0Zm9saW8SEgoKb2JqZWN0VXVpZBgBIAEoCRJECgpjcmVhdGVUaW1l",
-            "GAIgASgLMjAuUHJvdG9jb2xCdWZmZXJFeHBlcmltZW50cy5Db21tb24uRGF0",
-            "ZVRpbWVPZmZzZXQSDwoHbW9uaWtlchgDIAEoCRIMCgRuYW1lGAQgASgJYgZw",
-            "cm90bzM="));
+            "bWVudHMuQ29tbWFuZHMaF1RpbWV6b25lVGltZXN0YW1wLnByb3RvIoEBCg9D",
+            "cmVhdGVQb3J0Zm9saW8SRwoKcmVjZWl2ZWRBdBgBIAEoCzIzLlByb3RvY29s",
+            "QnVmZmVyRXhwZXJpbWVudHMuQ29tbW9uLlRpbWV6b25lVGltZXN0YW1wEg4K",
+            "BmNsaWVudBgCIAEoCRIVCg1wb3J0Zm9saW9OYW1lGAMgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.DateTimeOffsetReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, },
           new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-            new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Commands.CreatePortfolio), global::ProtocolBufferExperiments.Commands.CreatePortfolio.Parser, new[]{ "ObjectUuid", "CreateTime", "Moniker", "Name" }, null, null, null)
+            new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Commands.CreatePortfolio), global::ProtocolBufferExperiments.Commands.CreatePortfolio.Parser, new[]{ "ReceivedAt", "Client", "PortfolioName" }, null, null, null)
           }));
     }
     #endregion
@@ -59,53 +58,42 @@ namespace ProtocolBufferExperiments.Commands {
     partial void OnConstruction();
 
     public CreatePortfolio(CreatePortfolio other) : this() {
-      objectUuid_ = other.objectUuid_;
-      CreateTime = other.createTime_ != null ? other.CreateTime.Clone() : null;
-      moniker_ = other.moniker_;
-      name_ = other.name_;
+      ReceivedAt = other.receivedAt_ != null ? other.ReceivedAt.Clone() : null;
+      client_ = other.client_;
+      portfolioName_ = other.portfolioName_;
     }
 
     public CreatePortfolio Clone() {
       return new CreatePortfolio(this);
     }
 
-    /// <summary>Field number for the "objectUuid" field.</summary>
-    public const int ObjectUuidFieldNumber = 1;
-    private string objectUuid_ = "";
-    public string ObjectUuid {
-      get { return objectUuid_; }
+    /// <summary>Field number for the "receivedAt" field.</summary>
+    public const int ReceivedAtFieldNumber = 1;
+    private global::ProtocolBufferExperiments.Common.TimezoneTimestamp receivedAt_;
+    public global::ProtocolBufferExperiments.Common.TimezoneTimestamp ReceivedAt {
+      get { return receivedAt_; }
       set {
-        objectUuid_ = pb::Preconditions.CheckNotNull(value, "value");
+        receivedAt_ = value;
       }
     }
 
-    /// <summary>Field number for the "createTime" field.</summary>
-    public const int CreateTimeFieldNumber = 2;
-    private global::ProtocolBufferExperiments.Common.DateTimeOffset createTime_;
-    public global::ProtocolBufferExperiments.Common.DateTimeOffset CreateTime {
-      get { return createTime_; }
+    /// <summary>Field number for the "client" field.</summary>
+    public const int ClientFieldNumber = 2;
+    private string client_ = "";
+    public string Client {
+      get { return client_; }
       set {
-        createTime_ = value;
+        client_ = pb::Preconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "moniker" field.</summary>
-    public const int MonikerFieldNumber = 3;
-    private string moniker_ = "";
-    public string Moniker {
-      get { return moniker_; }
+    /// <summary>Field number for the "portfolioName" field.</summary>
+    public const int PortfolioNameFieldNumber = 3;
+    private string portfolioName_ = "";
+    public string PortfolioName {
+      get { return portfolioName_; }
       set {
-        moniker_ = pb::Preconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 4;
-    private string name_ = "";
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::Preconditions.CheckNotNull(value, "value");
+        portfolioName_ = pb::Preconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -120,19 +108,17 @@ namespace ProtocolBufferExperiments.Commands {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ObjectUuid != other.ObjectUuid) return false;
-      if (!object.Equals(CreateTime, other.CreateTime)) return false;
-      if (Moniker != other.Moniker) return false;
-      if (Name != other.Name) return false;
+      if (!object.Equals(ReceivedAt, other.ReceivedAt)) return false;
+      if (Client != other.Client) return false;
+      if (PortfolioName != other.PortfolioName) return false;
       return true;
     }
 
     public override int GetHashCode() {
       int hash = 1;
-      if (ObjectUuid.Length != 0) hash ^= ObjectUuid.GetHashCode();
-      if (createTime_ != null) hash ^= CreateTime.GetHashCode();
-      if (Moniker.Length != 0) hash ^= Moniker.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (receivedAt_ != null) hash ^= ReceivedAt.GetHashCode();
+      if (Client.Length != 0) hash ^= Client.GetHashCode();
+      if (PortfolioName.Length != 0) hash ^= PortfolioName.GetHashCode();
       return hash;
     }
 
@@ -141,37 +127,30 @@ namespace ProtocolBufferExperiments.Commands {
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ObjectUuid.Length != 0) {
+      if (receivedAt_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(ObjectUuid);
+        output.WriteMessage(ReceivedAt);
       }
-      if (createTime_ != null) {
+      if (Client.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteMessage(CreateTime);
+        output.WriteString(Client);
       }
-      if (Moniker.Length != 0) {
+      if (PortfolioName.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Moniker);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Name);
+        output.WriteString(PortfolioName);
       }
     }
 
     public int CalculateSize() {
       int size = 0;
-      if (ObjectUuid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ObjectUuid);
+      if (receivedAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReceivedAt);
       }
-      if (createTime_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateTime);
+      if (Client.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Client);
       }
-      if (Moniker.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Moniker);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (PortfolioName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PortfolioName);
       }
       return size;
     }
@@ -180,20 +159,17 @@ namespace ProtocolBufferExperiments.Commands {
       if (other == null) {
         return;
       }
-      if (other.ObjectUuid.Length != 0) {
-        ObjectUuid = other.ObjectUuid;
-      }
-      if (other.createTime_ != null) {
-        if (createTime_ == null) {
-          createTime_ = new global::ProtocolBufferExperiments.Common.DateTimeOffset();
+      if (other.receivedAt_ != null) {
+        if (receivedAt_ == null) {
+          receivedAt_ = new global::ProtocolBufferExperiments.Common.TimezoneTimestamp();
         }
-        CreateTime.MergeFrom(other.CreateTime);
+        ReceivedAt.MergeFrom(other.ReceivedAt);
       }
-      if (other.Moniker.Length != 0) {
-        Moniker = other.Moniker;
+      if (other.Client.Length != 0) {
+        Client = other.Client;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.PortfolioName.Length != 0) {
+        PortfolioName = other.PortfolioName;
       }
     }
 
@@ -205,22 +181,18 @@ namespace ProtocolBufferExperiments.Commands {
             input.SkipLastField();
             break;
           case 10: {
-            ObjectUuid = input.ReadString();
+            if (receivedAt_ == null) {
+              receivedAt_ = new global::ProtocolBufferExperiments.Common.TimezoneTimestamp();
+            }
+            input.ReadMessage(receivedAt_);
             break;
           }
           case 18: {
-            if (createTime_ == null) {
-              createTime_ = new global::ProtocolBufferExperiments.Common.DateTimeOffset();
-            }
-            input.ReadMessage(createTime_);
+            Client = input.ReadString();
             break;
           }
           case 26: {
-            Moniker = input.ReadString();
-            break;
-          }
-          case 34: {
-            Name = input.ReadString();
+            PortfolioName = input.ReadString();
             break;
           }
         }

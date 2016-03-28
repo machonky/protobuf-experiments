@@ -44,36 +44,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Messages\Generated\Any.cs" />
-    <Compile Include="Messages\Generated\Api.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="IEvent.cs" />
+    <Compile Include="IHandleCommand.cs" />
+    <Compile Include="IHandleEvent.cs" />
+    <Compile Include="IMessageFactory.cs" />
+    <Compile Include="ITradeDataService.cs" />
     <Compile Include="Messages\Generated\CreatePortfolio.cs" />
-    <Compile Include="Messages\Generated\DateTime.cs" />
-    <Compile Include="Messages\Generated\DateTimeOffset.cs" />
-    <Compile Include="Messages\Generated\Descriptor.cs" />
-    <Compile Include="Messages\Generated\Duration.cs" />
-    <Compile Include="Messages\Generated\Empty.cs" />
-    <Compile Include="Messages\Generated\FieldMask.cs" />
-    <Compile Include="Messages\Generated\SourceContext.cs" />
-    <Compile Include="Messages\Generated\Struct.cs" />
-    <Compile Include="Messages\Generated\TimeSpan.cs" />
-    <Compile Include="Messages\Generated\Timestamp.cs" />
-    <Compile Include="Messages\Generated\Type.cs" />
-    <Compile Include="Messages\Generated\Wrappers.cs" />
+    <Compile Include="Messages\Generated\MessageFrame.cs" />
+    <Compile Include="Messages\Generated\PortfolioCreated.cs" />
+    <Compile Include="Messages\Generated\TimezoneTimestamp.cs" />
+    <Compile Include="Messages\Partials\CreatePortfolioPartial.cs" />
+    <Compile Include="Messages\Partials\PortfolioCreatedPartial.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TradeDataCommandHandler.cs" />
+    <Compile Include="TradeDataService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Messages\CreatePortfolio.proto" />
-    <None Include="Messages\DateTime.proto" />
-    <None Include="Messages\DateTimeOffset.proto" />
-    <None Include="Messages\TimeSpan.proto" />
+    <None Include="Messages\MessageFrame.proto" />
+    <None Include="Messages\PortfolioCreated.proto" />
+    <None Include="Messages\TimezoneTimestamp.proto" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>$(ProjectDir)packages\Google.Protobuf.3.0.0-beta2\tools\protoc.exe $(ProjectDir)Messages\*.proto $(ProjectDir)\packages\Google.Protobuf.3.0.0-beta2\tools\google\protobuf\*.proto --proto_path=$(ProjectDir)packages\Google.Protobuf.3.0.0-beta2\tools;$(ProjectDir)\Messages --csharp_out=$(ProjectDir)Messages\Generated
+    <PreBuildEvent>$(ProjectDir)packages\Google.Protobuf.3.0.0-beta2\tools\protoc.exe $(ProjectDir)Messages\*.proto --proto_path=$(ProjectDir)packages\Google.Protobuf.3.0.0-beta2\tools;$(ProjectDir)\Messages --csharp_out=$(ProjectDir)Messages\Generated
 
 </PreBuildEvent>
   </PropertyGroup>

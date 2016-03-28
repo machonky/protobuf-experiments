@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+import "TimezoneTimestamp.proto";
+package ProtocolBufferExperiments.Events;
+
+message PortfolioCreated {
+	string objectUuid = 1;
+	string client = 2;
+	string portfolioName = 3;
+	ProtocolBufferExperiments.Common.TimezoneTimestamp createdAt = 4;
+	ProtocolBufferExperiments.Common.TimezoneTimestamp receivedAt = 5;
+}
