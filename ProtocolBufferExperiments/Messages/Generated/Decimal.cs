@@ -7,7 +7,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace ProtocolBufferExperiments {
+namespace DotNet {
 
   /// <summary>Holder for reflection information generated from Decimal.proto</summary>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23,13 +23,13 @@ namespace ProtocolBufferExperiments {
     static DecimalReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1EZWNpbWFsLnByb3RvEhlQcm90b2NvbEJ1ZmZlckV4cGVyaW1lbnRzIkEK",
-            "B0RlY2ltYWwSCgoCbG8YASABKAUSCwoDbWlkGAIgASgFEgoKAmhpGAMgASgF",
-            "EhEKCXNpZ25TY2FsZRgEIAEoEWIGcHJvdG8z"));
+            "Cg1EZWNpbWFsLnByb3RvEgZEb3ROZXQiQQoHRGVjaW1hbBIKCgJsbxgBIAEo",
+            "BRILCgNtaWQYAiABKAUSCgoCaGkYAyABKAUSEQoJc2lnblNjYWxlGAQgASgR",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-            new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Decimal), global::ProtocolBufferExperiments.Decimal.Parser, new[]{ "Lo", "Mid", "Hi", "SignScale" }, null, null, null)
+            new pbr::GeneratedCodeInfo(typeof(global::DotNet.Decimal), global::DotNet.Decimal.Parser, new[]{ "Lo", "Mid", "Hi", "SignScale" }, null, null, null)
           }));
     }
     #endregion
@@ -46,7 +46,7 @@ namespace ProtocolBufferExperiments {
     public static pb::MessageParser<Decimal> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ProtocolBufferExperiments.DecimalReflection.Descriptor.MessageTypes[0]; }
+      get { return global::DotNet.DecimalReflection.Descriptor.MessageTypes[0]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {

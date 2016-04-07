@@ -1,4 +1,4 @@
-﻿namespace ProtocolBufferExperiments
+﻿namespace DotNet
 {
     partial class Decimal
     {

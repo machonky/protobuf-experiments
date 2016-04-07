@@ -25,13 +25,13 @@ namespace ProtocolBufferExperiments.Commands {
           string.Concat(
             "ChVDcmVhdGVQb3J0Zm9saW8ucHJvdG8SIlByb3RvY29sQnVmZmVyRXhwZXJp",
             "bWVudHMuQ29tbWFuZHMaF1RpbWV6b25lVGltZXN0YW1wLnByb3RvGg1EZWNp",
-            "bWFsLnByb3RvIrQBCg9DcmVhdGVQb3J0Zm9saW8SRwoKcmVjZWl2ZWRBdBgB",
+            "bWFsLnByb3RvIqEBCg9DcmVhdGVQb3J0Zm9saW8SRwoKcmVjZWl2ZWRBdBgB",
             "IAEoCzIzLlByb3RvY29sQnVmZmVyRXhwZXJpbWVudHMuQ29tbW9uLlRpbWV6",
             "b25lVGltZXN0YW1wEg4KBmNsaWVudBgCIAEoCRIVCg1wb3J0Zm9saW9OYW1l",
-            "GAMgASgJEjEKBXZhbHVlGAQgASgLMiIuUHJvdG9jb2xCdWZmZXJFeHBlcmlt",
-            "ZW50cy5EZWNpbWFsYgZwcm90bzM="));
+            "GAMgASgJEh4KBXZhbHVlGAQgASgLMg8uRG90TmV0LkRlY2ltYWxiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, global::ProtocolBufferExperiments.DecimalReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, global::DotNet.DecimalReflection.Descriptor, },
           new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
             new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Commands.CreatePortfolio), global::ProtocolBufferExperiments.Commands.CreatePortfolio.Parser, new[]{ "ReceivedAt", "Client", "PortfolioName", "Value" }, null, null, null)
           }));
@@ -102,8 +102,8 @@ namespace ProtocolBufferExperiments.Commands {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 4;
-    private global::ProtocolBufferExperiments.Decimal value_;
-    public global::ProtocolBufferExperiments.Decimal Value {
+    private global::DotNet.Decimal value_;
+    public global::DotNet.Decimal Value {
       get { return value_; }
       set {
         value_ = value;
@@ -195,7 +195,7 @@ namespace ProtocolBufferExperiments.Commands {
       }
       if (other.value_ != null) {
         if (value_ == null) {
-          value_ = new global::ProtocolBufferExperiments.Decimal();
+          value_ = new global::DotNet.Decimal();
         }
         Value.MergeFrom(other.Value);
       }
@@ -225,7 +225,7 @@ namespace ProtocolBufferExperiments.Commands {
           }
           case 34: {
             if (value_ == null) {
-              value_ = new global::ProtocolBufferExperiments.Decimal();
+              value_ = new global::DotNet.Decimal();
             }
             input.ReadMessage(value_);
             break;

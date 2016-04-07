@@ -25,15 +25,15 @@ namespace ProtocolBufferExperiments.Events {
           string.Concat(
             "ChZQb3J0Zm9saW9DcmVhdGVkLnByb3RvEiBQcm90b2NvbEJ1ZmZlckV4cGVy",
             "aW1lbnRzLkV2ZW50cxoXVGltZXpvbmVUaW1lc3RhbXAucHJvdG8aDURlY2lt",
-            "YWwucHJvdG8ikQIKEFBvcnRmb2xpb0NyZWF0ZWQSEgoKb2JqZWN0VXVpZBgB",
+            "YWwucHJvdG8i/gEKEFBvcnRmb2xpb0NyZWF0ZWQSEgoKb2JqZWN0VXVpZBgB",
             "IAEoCRIOCgZjbGllbnQYAiABKAkSFQoNcG9ydGZvbGlvTmFtZRgDIAEoCRJG",
             "CgljcmVhdGVkQXQYBCABKAsyMy5Qcm90b2NvbEJ1ZmZlckV4cGVyaW1lbnRz",
             "LkNvbW1vbi5UaW1lem9uZVRpbWVzdGFtcBJHCgpyZWNlaXZlZEF0GAUgASgL",
             "MjMuUHJvdG9jb2xCdWZmZXJFeHBlcmltZW50cy5Db21tb24uVGltZXpvbmVU",
-            "aW1lc3RhbXASMQoFdmFsdWUYBiABKAsyIi5Qcm90b2NvbEJ1ZmZlckV4cGVy",
-            "aW1lbnRzLkRlY2ltYWxiBnByb3RvMw=="));
+            "aW1lc3RhbXASHgoFdmFsdWUYBiABKAsyDy5Eb3ROZXQuRGVjaW1hbGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, global::ProtocolBufferExperiments.DecimalReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, global::DotNet.DecimalReflection.Descriptor, },
           new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
             new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Events.PortfolioCreated), global::ProtocolBufferExperiments.Events.PortfolioCreated.Parser, new[]{ "ObjectUuid", "Client", "PortfolioName", "CreatedAt", "ReceivedAt", "Value" }, null, null, null)
           }));
@@ -126,8 +126,8 @@ namespace ProtocolBufferExperiments.Events {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 6;
-    private global::ProtocolBufferExperiments.Decimal value_;
-    public global::ProtocolBufferExperiments.Decimal Value {
+    private global::DotNet.Decimal value_;
+    public global::DotNet.Decimal Value {
       get { return value_; }
       set {
         value_ = value;
@@ -246,7 +246,7 @@ namespace ProtocolBufferExperiments.Events {
       }
       if (other.value_ != null) {
         if (value_ == null) {
-          value_ = new global::ProtocolBufferExperiments.Decimal();
+          value_ = new global::DotNet.Decimal();
         }
         Value.MergeFrom(other.Value);
       }
@@ -287,7 +287,7 @@ namespace ProtocolBufferExperiments.Events {
           }
           case 50: {
             if (value_ == null) {
-              value_ = new global::ProtocolBufferExperiments.Decimal();
+              value_ = new global::DotNet.Decimal();
             }
             input.ReadMessage(value_);
             break;
