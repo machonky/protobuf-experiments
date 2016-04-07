@@ -1,5 +1,7 @@
 ﻿syntax = "proto3";
 import "TimezoneTimestamp.proto";
+import "Decimal.proto";
+
 package ProtocolBufferExperiments.Events;
 
 message PortfolioCreated {
@@ -8,4 +10,5 @@ message PortfolioCreated {
 	string portfolioName = 3;
 	ProtocolBufferExperiments.Common.TimezoneTimestamp createdAt = 4;
 	ProtocolBufferExperiments.Common.TimezoneTimestamp receivedAt = 5;
+	ProtocolBufferExperiments.Decimal value = 6;
 }

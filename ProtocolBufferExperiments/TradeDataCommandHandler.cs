@@ -19,7 +19,9 @@ namespace ProtocolBufferExperiments
         public void Handle(CreatePortfolio cmd)
         {
             Console.WriteLine("received command:{0}",cmd);
+            Console.WriteLine("Value:{0}",(decimal)cmd.Value);
             _tradeDataService.CreatePortfolio(cmd.Client, cmd.PortfolioName, cmd.ReceivedAt.Timestamp.ToDateTimeOffset());
+
         }
 
         public void Handle(BogusCommand cmd)

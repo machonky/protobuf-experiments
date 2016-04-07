@@ -31,6 +31,7 @@ namespace ProtocolBufferExperiments
                     Timestamp = DateTime.Now.ToUniversalTime().ToTimestamp(),
                     TimezoneOffset = new TimeSpan(8,0,0).ToDuration(),
                 },
+                Value = -12345m
             };
 
             // ...encoded into binary and shoved in a language neutral container so it can be restored later.

@@ -51,10 +51,12 @@
     <Compile Include="IMessageFactory.cs" />
     <Compile Include="ITradeDataService.cs" />
     <Compile Include="Messages\Generated\CreatePortfolio.cs" />
+    <Compile Include="Messages\Generated\Decimal.cs" />
     <Compile Include="Messages\Generated\MessageFrame.cs" />
     <Compile Include="Messages\Generated\PortfolioCreated.cs" />
     <Compile Include="Messages\Generated\TimezoneTimestamp.cs" />
     <Compile Include="Messages\Partials\CreatePortfolioPartial.cs" />
+    <Compile Include="Messages\Partials\DecimalPartial.cs" />
     <Compile Include="Messages\Partials\PortfolioCreatedPartial.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +66,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Messages\CreatePortfolio.proto" />
+    <None Include="Messages\Decimal.proto" />
     <None Include="Messages\MessageFrame.proto" />
     <None Include="Messages\PortfolioCreated.proto" />
     <None Include="Messages\TimezoneTimestamp.proto" />

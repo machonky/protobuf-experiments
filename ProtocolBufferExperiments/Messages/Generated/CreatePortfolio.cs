@@ -24,14 +24,16 @@ namespace ProtocolBufferExperiments.Commands {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVDcmVhdGVQb3J0Zm9saW8ucHJvdG8SIlByb3RvY29sQnVmZmVyRXhwZXJp",
-            "bWVudHMuQ29tbWFuZHMaF1RpbWV6b25lVGltZXN0YW1wLnByb3RvIoEBCg9D",
-            "cmVhdGVQb3J0Zm9saW8SRwoKcmVjZWl2ZWRBdBgBIAEoCzIzLlByb3RvY29s",
-            "QnVmZmVyRXhwZXJpbWVudHMuQ29tbW9uLlRpbWV6b25lVGltZXN0YW1wEg4K",
-            "BmNsaWVudBgCIAEoCRIVCg1wb3J0Zm9saW9OYW1lGAMgASgJYgZwcm90bzM="));
+            "bWVudHMuQ29tbWFuZHMaF1RpbWV6b25lVGltZXN0YW1wLnByb3RvGg1EZWNp",
+            "bWFsLnByb3RvIrQBCg9DcmVhdGVQb3J0Zm9saW8SRwoKcmVjZWl2ZWRBdBgB",
+            "IAEoCzIzLlByb3RvY29sQnVmZmVyRXhwZXJpbWVudHMuQ29tbW9uLlRpbWV6",
+            "b25lVGltZXN0YW1wEg4KBmNsaWVudBgCIAEoCRIVCg1wb3J0Zm9saW9OYW1l",
+            "GAMgASgJEjEKBXZhbHVlGAQgASgLMiIuUHJvdG9jb2xCdWZmZXJFeHBlcmlt",
+            "ZW50cy5EZWNpbWFsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, global::ProtocolBufferExperiments.DecimalReflection.Descriptor, },
           new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-            new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Commands.CreatePortfolio), global::ProtocolBufferExperiments.Commands.CreatePortfolio.Parser, new[]{ "ReceivedAt", "Client", "PortfolioName" }, null, null, null)
+            new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Commands.CreatePortfolio), global::ProtocolBufferExperiments.Commands.CreatePortfolio.Parser, new[]{ "ReceivedAt", "Client", "PortfolioName", "Value" }, null, null, null)
           }));
     }
     #endregion
@@ -61,6 +63,7 @@ namespace ProtocolBufferExperiments.Commands {
       ReceivedAt = other.receivedAt_ != null ? other.ReceivedAt.Clone() : null;
       client_ = other.client_;
       portfolioName_ = other.portfolioName_;
+      Value = other.value_ != null ? other.Value.Clone() : null;
     }
 
     public CreatePortfolio Clone() {
@@ -97,6 +100,16 @@ namespace ProtocolBufferExperiments.Commands {
       }
     }
 
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 4;
+    private global::ProtocolBufferExperiments.Decimal value_;
+    public global::ProtocolBufferExperiments.Decimal Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as CreatePortfolio);
     }
@@ -111,6 +124,7 @@ namespace ProtocolBufferExperiments.Commands {
       if (!object.Equals(ReceivedAt, other.ReceivedAt)) return false;
       if (Client != other.Client) return false;
       if (PortfolioName != other.PortfolioName) return false;
+      if (!object.Equals(Value, other.Value)) return false;
       return true;
     }
 
@@ -119,6 +133,7 @@ namespace ProtocolBufferExperiments.Commands {
       if (receivedAt_ != null) hash ^= ReceivedAt.GetHashCode();
       if (Client.Length != 0) hash ^= Client.GetHashCode();
       if (PortfolioName.Length != 0) hash ^= PortfolioName.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
       return hash;
     }
 
@@ -139,6 +154,10 @@ namespace ProtocolBufferExperiments.Commands {
         output.WriteRawTag(26);
         output.WriteString(PortfolioName);
       }
+      if (value_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Value);
+      }
     }
 
     public int CalculateSize() {
@@ -151,6 +170,9 @@ namespace ProtocolBufferExperiments.Commands {
       }
       if (PortfolioName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PortfolioName);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
       }
       return size;
     }
@@ -170,6 +192,12 @@ namespace ProtocolBufferExperiments.Commands {
       }
       if (other.PortfolioName.Length != 0) {
         PortfolioName = other.PortfolioName;
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          value_ = new global::ProtocolBufferExperiments.Decimal();
+        }
+        Value.MergeFrom(other.Value);
       }
     }
 
@@ -193,6 +221,13 @@ namespace ProtocolBufferExperiments.Commands {
           }
           case 26: {
             PortfolioName = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (value_ == null) {
+              value_ = new global::ProtocolBufferExperiments.Decimal();
+            }
+            input.ReadMessage(value_);
             break;
           }
         }

@@ -24,17 +24,18 @@ namespace ProtocolBufferExperiments.Events {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZQb3J0Zm9saW9DcmVhdGVkLnByb3RvEiBQcm90b2NvbEJ1ZmZlckV4cGVy",
-            "aW1lbnRzLkV2ZW50cxoXVGltZXpvbmVUaW1lc3RhbXAucHJvdG8i3gEKEFBv",
-            "cnRmb2xpb0NyZWF0ZWQSEgoKb2JqZWN0VXVpZBgBIAEoCRIOCgZjbGllbnQY",
-            "AiABKAkSFQoNcG9ydGZvbGlvTmFtZRgDIAEoCRJGCgljcmVhdGVkQXQYBCAB",
-            "KAsyMy5Qcm90b2NvbEJ1ZmZlckV4cGVyaW1lbnRzLkNvbW1vbi5UaW1lem9u",
-            "ZVRpbWVzdGFtcBJHCgpyZWNlaXZlZEF0GAUgASgLMjMuUHJvdG9jb2xCdWZm",
-            "ZXJFeHBlcmltZW50cy5Db21tb24uVGltZXpvbmVUaW1lc3RhbXBiBnByb3Rv",
-            "Mw=="));
+            "aW1lbnRzLkV2ZW50cxoXVGltZXpvbmVUaW1lc3RhbXAucHJvdG8aDURlY2lt",
+            "YWwucHJvdG8ikQIKEFBvcnRmb2xpb0NyZWF0ZWQSEgoKb2JqZWN0VXVpZBgB",
+            "IAEoCRIOCgZjbGllbnQYAiABKAkSFQoNcG9ydGZvbGlvTmFtZRgDIAEoCRJG",
+            "CgljcmVhdGVkQXQYBCABKAsyMy5Qcm90b2NvbEJ1ZmZlckV4cGVyaW1lbnRz",
+            "LkNvbW1vbi5UaW1lem9uZVRpbWVzdGFtcBJHCgpyZWNlaXZlZEF0GAUgASgL",
+            "MjMuUHJvdG9jb2xCdWZmZXJFeHBlcmltZW50cy5Db21tb24uVGltZXpvbmVU",
+            "aW1lc3RhbXASMQoFdmFsdWUYBiABKAsyIi5Qcm90b2NvbEJ1ZmZlckV4cGVy",
+            "aW1lbnRzLkRlY2ltYWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ProtocolBufferExperiments.Common.TimezoneTimestampReflection.Descriptor, global::ProtocolBufferExperiments.DecimalReflection.Descriptor, },
           new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-            new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Events.PortfolioCreated), global::ProtocolBufferExperiments.Events.PortfolioCreated.Parser, new[]{ "ObjectUuid", "Client", "PortfolioName", "CreatedAt", "ReceivedAt" }, null, null, null)
+            new pbr::GeneratedCodeInfo(typeof(global::ProtocolBufferExperiments.Events.PortfolioCreated), global::ProtocolBufferExperiments.Events.PortfolioCreated.Parser, new[]{ "ObjectUuid", "Client", "PortfolioName", "CreatedAt", "ReceivedAt", "Value" }, null, null, null)
           }));
     }
     #endregion
@@ -66,6 +67,7 @@ namespace ProtocolBufferExperiments.Events {
       portfolioName_ = other.portfolioName_;
       CreatedAt = other.createdAt_ != null ? other.CreatedAt.Clone() : null;
       ReceivedAt = other.receivedAt_ != null ? other.ReceivedAt.Clone() : null;
+      Value = other.value_ != null ? other.Value.Clone() : null;
     }
 
     public PortfolioCreated Clone() {
@@ -122,6 +124,16 @@ namespace ProtocolBufferExperiments.Events {
       }
     }
 
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 6;
+    private global::ProtocolBufferExperiments.Decimal value_;
+    public global::ProtocolBufferExperiments.Decimal Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as PortfolioCreated);
     }
@@ -138,6 +150,7 @@ namespace ProtocolBufferExperiments.Events {
       if (PortfolioName != other.PortfolioName) return false;
       if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
       if (!object.Equals(ReceivedAt, other.ReceivedAt)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
       return true;
     }
 
@@ -148,6 +161,7 @@ namespace ProtocolBufferExperiments.Events {
       if (PortfolioName.Length != 0) hash ^= PortfolioName.GetHashCode();
       if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
       if (receivedAt_ != null) hash ^= ReceivedAt.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
       return hash;
     }
 
@@ -176,6 +190,10 @@ namespace ProtocolBufferExperiments.Events {
         output.WriteRawTag(42);
         output.WriteMessage(ReceivedAt);
       }
+      if (value_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Value);
+      }
     }
 
     public int CalculateSize() {
@@ -194,6 +212,9 @@ namespace ProtocolBufferExperiments.Events {
       }
       if (receivedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReceivedAt);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
       }
       return size;
     }
@@ -222,6 +243,12 @@ namespace ProtocolBufferExperiments.Events {
           receivedAt_ = new global::ProtocolBufferExperiments.Common.TimezoneTimestamp();
         }
         ReceivedAt.MergeFrom(other.ReceivedAt);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          value_ = new global::ProtocolBufferExperiments.Decimal();
+        }
+        Value.MergeFrom(other.Value);
       }
     }
 
@@ -256,6 +283,13 @@ namespace ProtocolBufferExperiments.Events {
               receivedAt_ = new global::ProtocolBufferExperiments.Common.TimezoneTimestamp();
             }
             input.ReadMessage(receivedAt_);
+            break;
+          }
+          case 50: {
+            if (value_ == null) {
+              value_ = new global::ProtocolBufferExperiments.Decimal();
+            }
+            input.ReadMessage(value_);
             break;
           }
         }
